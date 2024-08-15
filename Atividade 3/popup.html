@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Pop-Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f2f7f9; 
+        }
+
+        .buttonOpenDialog {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #009688; 
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .buttonOpenDialog:hover {
+            background-color: #00796b; 
+            transform: scale(1.05);
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px solid #00796b; 
+            margin: 15px 0;
+        }
+
+        .dialog-main {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .dialog {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 480px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            animation: dialog 0.5s ease-in-out;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        @keyframes dialog {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dialog-title {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #00796b; 
+            text-align: center;
+        }
+
+        .css {
+            margin: 15px 0;
+            color: #333333;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        .okButton {
+            background-color: #4caf50;
+        }
+
+        .okButton:hover {
+            background-color: #388e3c;
+        }
+
+        .closeButton {
+            background-color: #f44336;
+            margin-left: 10px;
+        }
+
+        .closeButton:hover {
+            background-color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <button class="buttonOpenDialog" onclick="openDialog()">POP - UP</button>
+    <div class="dialog-main">
+        <div class="dialog">
+            <h2 class="dialog-title">Informação</h2>
+            <hr />
+            <p class="css">
+                O Cascading Style Sheets (CSS) foi proposto pela primeira vez em Outubro de 1994, 
+                por Hakon Lie, que queria facilitar a programação de sites, que na época era muito 
+                mais complexa
+            </p>
+            <hr />
+            <div class="buttons">
+                <button class="closeButton" onclick="closeDialog()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="./popup.js"></script>
+</body>
+</html>

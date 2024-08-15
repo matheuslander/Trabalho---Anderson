@@ -1,0 +1,54 @@
+/* Reset básico e configuração de caixa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Configurações básicas do body */
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f4f4;
+}
+
+/* Container principal */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Controles */
+.controls {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo do iframe */
+iframe {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 80vw;
+  height: 60vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
